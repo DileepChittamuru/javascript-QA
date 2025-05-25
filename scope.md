@@ -72,8 +72,21 @@ var g = 1;
  f 2 <br>
  g undefined <br>
 </p>
+</details>
 
- 
+##### 3. What's the output
 
-  
+```javascript
+function hoistExample() {
+    console.log("Before: ", a);
+    var a;
+    a = 10;
+    console.log("After: ", a);
+}
+hoistExample();
+```
+<details>
+  <summary><b>Answer</b></summary>
+  <p>Before: undefined</p>
+  <p>After: 10</p>
 </details>
