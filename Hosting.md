@@ -288,4 +288,55 @@ console.log(too);
     <summary><b>Answer</b></summary>
 </details>
 
+###### 16. What's the output?
 
+```javascript
+if (true) {
+  var foo = "abc";
+}
+console.log(foo);
+
+let foo = "abc";
+if (true) {
+  let foo = "xyz";
+}
+console.log(foo);
+```
+<details>
+    <summary><b>Answer</b></summary>
+</details>
+
+###### 16. What's the output?
+
+```javascript
+if (true) {
+  var foo = "abc";
+}
+console.log(foo);
+
+let foo = "abc";
+if (true) {
+  let foo = "xyz";
+}
+console.log(foo);
+```
+<details>
+    <summary><b>Answer</b></summary>
+</details>
+
+###### 17. What's the output?
+
+```javascript
+if (true) {
+  const foo = "abc";
+  foo = "xyz";
+}
+
+if (true) {
+  const foo = "abc";
+}
+console.log(foo);
+```
+<details>
+    <summary><b>Answer</b></summary>
+</details>
