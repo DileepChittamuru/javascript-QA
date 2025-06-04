@@ -60,6 +60,29 @@ console.log(name);
 const list = [ 'suji', 'dileep', 'shritha' ];
  let [ d,  e, f] = list;
 console.log('test',d,e,f);
+
+const original = {
+  name: "Dileep",
+  address: {
+    city: "Hyderabad",
+    pin: 500001
+  }
+};
+
+// Shallow Copy: Copies only the first level of an object. Nested objects are still referenced, not cloned.
+const shallowCopy = Object.assign({}, original);
+const copied = {...original}
+
+// Deep Copy: Recursively copies all levels, so nested objects are completely independent of the original.
+const deepCopy = JSON.parse(JSON.stringify(original));
+
+// Modify nested object
+original.address.city = "Bangalore";
+
+console.log("Original:", original.address.city);      // Bangalore
+console.log("Shallow Copy:", shallowCopy.address.city); // Bangalore ❗ (Changed!)
+console.log("Deep Copy:", deepCopy.address.city);     // Hyderabad ✅ (Unchanged)
+
 ```
 <details><summary><b>Answer</b></summary>
 <p>
