@@ -1,5 +1,32 @@
 **Flat Nested Array**
 
+Write a custom flat function to flat an array
+
+[1, [2, [3, [4] ] ==> [ 1, 2, 3, 4]
+
+
+**Explanation**
+
+1. let result = []
+Create an empty array to store the flattened values.
+
+2. for (let val of arr)
+Loop through each value in the array.
+
+3. if (Array.isArray(val))
+Check if the current value is an array:
+
+✅ If yes → recursively call flatten(val)
+
+❌ If no → push the value directly to result
+
+4. result = [...result, ...flatten(val)]
+Use the spread operator to append the result of the recursive call.
+
+5. Finally, return the result.
+
+**Code**
+
 ```javascript
 
 function flatten(arr) {
@@ -17,15 +44,6 @@ function flatten(arr) {
 flatten([1, [2, [3, [4]])
 
 ```
-
-**Explanation**
-
-- Create an result array
-- Iterate over the array
-- when the value is array, do a recursion otherwise push in result array
-- recursion method should have return value, so that it the remember the previous result.
-
-
 
 **Answer**
 
