@@ -40,3 +40,17 @@ const FirstLargestNumber = (arr) => {
   return second === -Infinity ? null : second;
 }
 ```
+
+```javascript
+let arr = [4,1,3,2]
+let first = 0;
+let second = 0;
+for(let val of arr) {
+  if(val > first) {
+    second = first;
+    first = val
+  } else if(val > second && val < first) {
+    second = val
+  }
+}
+console.log(second)
