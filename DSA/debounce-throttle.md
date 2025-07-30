@@ -1,6 +1,5 @@
 ```javascript
 
-//const api = (type = "empty") => new Promise(resolve => setTimeout(() => {console.log('api called', type)} , 2000))
 const api = (type) => new Promise(resolve =>
     setTimeout(() => {
         console.log('api called with:', type);
