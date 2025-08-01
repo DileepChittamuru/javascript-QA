@@ -14,7 +14,6 @@ const debounce = function(func, delay) {
         timer = setTimeout(() => func.apply(this, args), delay);
     }
 }
-
 const throttle = function(func, delay) {
     let run;
     return function(...args) {
@@ -26,9 +25,7 @@ const throttle = function(func, delay) {
         }
     }
 }
-
 const debounceApi = debounce(api, 2000);
-
 console.log(debounceApi('debounce-1'));
 console.log(debounceApi('debounce-2'));
 console.log(debounceApi('debounce-3'));
