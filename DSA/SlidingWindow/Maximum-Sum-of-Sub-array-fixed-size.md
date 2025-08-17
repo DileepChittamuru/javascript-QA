@@ -3,28 +3,24 @@
 
 Given an array and target value and return the max sum of the window
 
-1. First find the sum of first window
+<img width="1120" height="748" alt="image" src="https://github.com/user-attachments/assets/9a9bf74a-f2aa-4a3d-88ce-fb4c28833890" />
 
-2. Slide the window ie from first element to next element
-
-3. iterate the array and remove the previous element
 
 ```javascript
 
 const slidingWindow = (arr, k) => {
+   // Step 1: Intialise the sum of first window
+    let windowSum = 0;
+    for (let i=0; i<k; i++) {
+      windowSum += arr[i]
+    }
 
-  let maxSum = 0;
-  // Step 1: sum of first window
-  for( i=0; i<k; i++) {
-    maxSum = maxSum + arr[i]
-  }
-  let maxWindow = maxSum
-  // Step 2 : Slide the window
-  for( i=k; i<arr.length; i++) {
-    maxWindow = maxWindow + arr[i] - arr[i-k]
-    maxSum = Math.max(maxSum, maxWindow)
-  }
-
-  return maxSum
+   let maxSum = windowSum; // Intialise the maxSum with first window
+    // Step 2: Slide the window
+    for(let i=k; i<arr.length; i++) {
+      windowSum = windowSum + arr[i] - arr[i-k]; // update windowSum
+      maxSum = Math.max(maxSum, windowSum); // update maxSum
+    }
+    return maxSum;
 }
 ```
