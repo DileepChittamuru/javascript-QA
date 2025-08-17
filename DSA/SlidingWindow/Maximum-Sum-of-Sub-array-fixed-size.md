@@ -11,14 +11,16 @@ Given an array and target value and return the max sum of the window
 const slidingWindow = (arr, k) => {
    // Step 1: Intialise the sum of first window
     let windowSum = 0;
+    let maxSum = 0;
     for (let i=0; i<k; i++) {
       windowSum += arr[i]
     }
 
-   let maxSum = windowSum; // Intialise the maxSum with first window
-    // Step 2: Slide the window
+    maxSum = windowSum; // update the maxSum with first window
+
+    // Step 2: Slide the window across the array
     for(let i=k; i<arr.length; i++) {
-      windowSum = windowSum + arr[i] - arr[i-k]; // update windowSum
+      windowSum = windowSum + arr[i] - arr[i-k]; // #Add new element and #Remove old element
       maxSum = Math.max(maxSum, windowSum); // update maxSum
     }
     return maxSum;
