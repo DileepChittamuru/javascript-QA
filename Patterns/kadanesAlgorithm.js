@@ -1,12 +1,13 @@
 // Kandanes algorithm O(n)
-function maxSubArray(arr) {
-  let max_sum = 0;
-  let current_sum = 0;
-  for ( let val of arr) {
-     current_sum = Math.max(val, current_sum + val)
-     max_sum = Math.max(max_sum, current_sum)
+function maxSubArray(numbers) {
+  let currentSum = numbers[0];
+  let maxSum = numbers[0];
+  for (let i=1; i<numbers.length; i++) {
+    // subarray + currentValue > currentValue
+    currentSum = Math.max(numbers[i], currentSum + numbers[i]);
+    maxSum = Math.max(maxSum, currentSum)
   }
-  return max_sum;
+  return maxSum
 }
 console.log(maxSubArray([-1,5,-3,9,-11]))
 
