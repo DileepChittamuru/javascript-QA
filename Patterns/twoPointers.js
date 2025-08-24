@@ -1,6 +1,24 @@
-
+/**
+*  Twopointers 
+*
+* sliding window is also two pointer technique
+*/
 function twoPointers() {
-  // Move zero's to end
+
+  function isPalindrome(str) {
+    let left = 0;
+    let right = str.length - 1;
+  
+    while (left < right) {
+      if (str[left] !== str[right]) {
+        return false
+      } 
+      left++;
+      right--;
+    }
+    return true
+  }
+  
   function moveZeroToEnd(arr) {
     let left = 0;
     for (let right = 0; right < arr.length; right++) {
