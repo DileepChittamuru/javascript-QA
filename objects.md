@@ -38,6 +38,31 @@ console.log(proto.a)
 </p>
 </details>
 
+###### 
+
+```javascript
+const obj1 = { a: 0, b: { c: 0 } };
+const obj2 = Object.assign({}, obj1);
+console.log(obj2)
+
+obj1.a = 1
+console.log(obj1) // 1
+console.log(obj2) // 0
+
+obj2.a = 2
+console.log(obj1) // 1
+console.log(obj2) // 2
+
+obj2.b.c = 30;
+console.log(obj1.b.c)// 30
+```
+<details><summary><b>Answer</b></summary>
+<p>
+  primtives cant be shadow here
+  object will shadow here
+</p>
+</details>
+
 ###### 2. What's the output?
 
 ```javascript
