@@ -8,19 +8,33 @@
 ###### 1. What's the output?
 
 ```javascript
-function create() {
-    const obj = {
-      name: 'dileep',
-      age: 21
-    };
-    const newObj = Object.create(obj);
-    newObj.address = 'nellore';
-    console.log(`create newObj`, newObj);
-    console.log(`create newObj`, newObj.address);
-  }
+const obj = {
+  name: 'dileep',
+  age: 21
+};
+const newObj = Object.create(obj);
+newObj.age = 31;
+newObj.name= "suji"
+console.log(`create newObj`, newObj.age, obj.age, obj.name, newObj.name);
+
+
+const proto = { a: 1, b: { c: 2 } };
+
+const obj2 = Object.create(proto);
+
+console.log(obj2.a); // 1 (inherited, not copied)
+console.log(obj2.b.c); // 2 (inherited)
+
+obj2.b.c = 42;
+obj2.a = 'test'
+console.log(proto.b.c);
+console.log(proto.a)
+
 ```
 <details><summary><b>Answer</b></summary>
 <p>
+  primtives cant be shadow here
+  object will shadow here
 </p>
 </details>
 
