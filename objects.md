@@ -51,6 +51,7 @@ function entry(){
 ```
 <details><summary><b>Answer</b></summary>
 <p>
+[["name", "dileep"], ["age": 21]]
 </p>
 </details>
 
@@ -67,6 +68,7 @@ function mapFun(){
 ```
 <details><summary><b>Answer</b></summary>
 <p>
+{name: 'dileep', age: 30}
 </p>
 </details>
 
@@ -77,31 +79,7 @@ function mapFun(){
 function wordCount(str) {
     let obj = {};
     for (let prop of str) {
-      if(Object.hasOwn(obj, prop)) {
-        obj[prop] = obj[prop] + 1;
-      } else {
-        obj[prop] = 1;
-      }
-    }
-    console.log(obj);
-}
-```
-<details><summary><b>Answer</b></summary>
-<p>
-</p>
-</details>
-
-###### 5. What's the output?
-
-```javascript
-function wordCount(str) {
-    let obj = {};
-    for (let prop of str) {
-      if(Object.hasOwn(obj, prop)) {
-        obj[prop] = obj[prop] + 1;
-      } else {
-        obj[prop] = 1;
-      }
+      obj[prop] = (obj[prop] ?? 0) + 1;
     }
     console.log(obj);
 }
